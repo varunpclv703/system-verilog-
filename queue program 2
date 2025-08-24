@@ -1,0 +1,12 @@
+module descriptor_ids;
+  int queue_ids[$];
+  initial begin
+   int i;
+    for(i=1;i<=15;i++)begin
+     queue_ids.push_back(i);
+     $display("enqueue %od-queue size=%od",i,queue_ids.size());
+     $display("descriptor ids =%p",queue_ids);
+   end
+  end
+endmodule
+  
