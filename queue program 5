@@ -1,0 +1,9 @@
+module insert_value();
+  initial begin
+    int queue[$]={101, 102, 103, 104, 105} ;
+    int insert=999;
+    int index=2;
+    queue.insert(index,insert);
+    $display("updated queue=%p",queue);
+  end
+endmodule  
