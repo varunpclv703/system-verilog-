@@ -1,0 +1,10 @@
+module total_payload();
+int payload_size[$]={120, 80, 200, 150, 50};
+int total_payload=0;
+ initial begin
+   foreach(payload_size[i])begin
+     total_payload+=payload_size[i];
+   end
+   $display("total payload size =%0d bytes",total_payload);
+ end
+endmodule
