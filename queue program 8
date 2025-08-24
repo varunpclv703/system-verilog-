@@ -1,0 +1,14 @@
+module dequeue_loop();
+  initial begin
+    int enqueue[$];
+    int dequeue[$];
+    int i;
+    enqueue[$]={1,2,3};
+    dequeue.push_front(1);
+    dequeue.push_back(2);
+    dequeue.push_back(3);
+    foreach(dequeue[i])begin
+      $display("dequeue=%p",dequeue[i]);
+    end
+  end
+endmodule
