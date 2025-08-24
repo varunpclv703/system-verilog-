@@ -1,0 +1,17 @@
+module mail_box_tb;
+  initial begin
+    mailbox mbx;
+    mbx=new(1);
+    fork
+      begin
+       int temp_value=100;
+       mbx.put(temp_value);
+      end
+      begin
+       int data;
+       mbx.get(data);
+       $display("received temperature=%0d",data);
+      end
+    join
+  end
+endmodule
