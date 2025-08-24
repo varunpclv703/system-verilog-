@@ -1,0 +1,18 @@
+module acces_bus;
+  semaphore sem=new(2);
+  initial begin
+    fork
+      master_process("master 1");
+      master_process("master 2");
+      master_process("master 3");
+    join
+  end
+  task master_process(string name);
+    $display("%s trying to acquire bus ",name);
+    sem.get(1);
+    $display(" %s acquired bus",name);
+    #10;
+    $display(" %s released bus",name);
+    sem.put(1);
+  endtask
+endmodule
