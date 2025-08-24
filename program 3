@@ -1,0 +1,14 @@
+module detect_maximum_error();
+  int unsigned error_count[] = '{2, 5, 3, 6, 1, 0, 4, 5, 10, 2, 1, 0, 2, 3, 4};
+  initial begin
+    int unsigned max_error = 0;
+    int unsigned max_index = 0;
+    for (int i = 0; i < $size(error_count); i++) begin
+      if (error_count[i] > max_error) begin
+        max_error = error_count[i];
+        max_index = i;
+      end
+    end
+    $display("Max Errors: %0d found at Subsystem Index %0d", max_error, max_index);
+  end
+endmodule 
