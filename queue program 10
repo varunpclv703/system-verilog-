@@ -1,0 +1,10 @@
+module reverse_queue();
+  initial begin
+    int event_log[$];
+    event_log={1,2,3,4};
+    event_log.reverse();
+    $display("reversed=%p",event_log);
+   end
+endmodule 
+    
+    
