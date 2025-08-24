@@ -1,0 +1,9 @@
+module packet_logs;
+  initial begin
+    int i;
+    int packet_log[$]={501, 502, 503};
+    foreach(packet_log[i])begin
+      $display("packet=%p",packet_log[i]);
+    end
+  end
+endmodule
