@@ -1,0 +1,22 @@
+module mail_box_tb;
+  initial begin
+    mailbox mbx;
+    mbx=new(5);
+    fork
+      begin
+        mbx.put(128);
+        mbx.put(256);
+        mbx.put(512);
+        mbx.put(1024);
+        mbx.put(2048);
+      end
+      begin
+        int data;
+        repeat(5)begin
+         mbx.get(data);
+          $display("received size=%p",data);
+        end
+      end
+    join
+  end
+endmodule
