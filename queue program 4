@@ -1,0 +1,14 @@
+module latencies;
+  initial begin
+    int maximum_latencies[]={12,35,42,18,29,50,31};
+    int max_lat;
+    int i;
+    max_lat = 0;
+    for (i = 0; i < $size(maximum_latencies); i++) begin
+      if (maximum_latencies[i] > max_lat) begin
+        max_lat = maximum_latencies[i];
+      end
+    end
+    $display("Maximum Latency = %0d", max_lat);
+  end
+endmodule
