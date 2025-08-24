@@ -1,0 +1,16 @@
+module interrupt_handler;
+ mailbox interrupt_mb = new();
+   initial begin
+    string block;
+     if (interrupt_mb.try_get(block))
+       $display("Interrupt Received: %s", block);
+     else
+      $display("No interrupt");
+     interrupt_mb.put("UART_RX");
+     if (interrupt_mb.try_get(block))
+       $display("Interrupt Received: %s", block);
+     else begin
+      $display("No interrupt");
+     end
+   end
+endmodule
