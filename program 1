@@ -1,0 +1,13 @@
+program temperature_readings();
+ initial begin
+  int unsigned total;
+  int unsigned temp_readings[10];
+  temp_readings='{30,28,27,29,31,30,32,33,29,30};
+   total=0;
+     foreach(temp_readings[i])
+      begin
+      total += temp_readings[i];
+     end
+   $display("Time=%0t ns => Total Temperature = %0d",$time,total);
+end 
+endprogram    
