@@ -1,0 +1,11 @@
+module assoc_array();
+  int mac_address[string];
+  initial begin
+    mac_address["AA:BB:CC:DD:EE:01"] = 1; 
+    mac_address["AA:BB:CC:DD:EE:02"] = 5; 
+    mac_address["AA:BB:CC:DD:EE:03"]= 3;
+    foreach(mac_address[idx])begin
+      $display("mac %s =>port=%p",idx,mac_address[idx]);
+    end
+  end
+endmodule
