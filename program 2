@@ -1,0 +1,8 @@
+module reverse_the_buffer();
+  initial begin
+    int unsigned txn_ids[8];
+    txn_ids='{100,101,102,103,104,105,106,107};
+    txn_ids.reverse();
+    $display("reversed=%p",txn_ids);
+end
+endmodule 
