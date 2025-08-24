@@ -1,0 +1,13 @@
+module queue_packet;
+  initial begin 
+   int packet_ids[$];
+   int pop_packet;
+     packet_ids.push_back(5);
+     $display("after enqueue 5=%p",packet_ids);
+     packet_ids.push_back(10);
+     $display("after enqueue 10=%p",packet_ids);
+     pop_packet=packet_ids.pop_front();
+     $display("after dequeue 5=%0d",pop_packet);
+     $display(" queue after dequeue =%p",packet_ids);
+  end
+endmodule 
