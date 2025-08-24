@@ -1,0 +1,11 @@
+module sensor_readings;
+ int calibration_sensor[string];
+  initial begin
+  calibration_sensor["temp"]=15;
+  calibration_sensor["humidity"]=7;
+  calibration_sensor["pressure"]=-2;
+    $display("temperature calibration=%od mv",calibration_sensor["temp"]);
+    $display("humidity calibration=%od mv",calibration_sensor["humidity"]);
+    $display("pressure calibration=%od mv",calibration_sensor["pressure"]);
+  end
+endmodule
