@@ -1,0 +1,8 @@
+module exchange_queue();
+  initial begin
+    int queue_1[$]={11,12,13};
+    int queue_2[$];
+    queue_2=queue_1;
+    $display("queue 2=%p",queue_2);
+  end
+endmodule
