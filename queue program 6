@@ -1,0 +1,13 @@
+module delete_queue;
+  initial begin
+    int job_queue[$]={201,202,203,202,204};
+    int remove_id=202;
+    int final_queue[$];
+    foreach(job_queue[i])begin
+      if(job_queue[i]!=remove_id)begin
+        final_queue.push_back(job_queue[i]);
+        $display("final queue = %p",final_queue);
+      end
+    end
+  end
+endmodule
